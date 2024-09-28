@@ -1,3 +1,7 @@
+html {
+  background-color: black;
+}
+
 #btn_wrapper {
   display: flex;
   justify-content: center;
@@ -8,17 +12,22 @@
   border-radius: 5px;
 }
 
+#container_wrapper {
+  display: flex;
+  justify-content: center;
+}
+body {
+  height: 100vh;
+}
 #container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
+  align-items: center;
+  width: 80vh;
+  height: 80vh;
 }
 
 #grid {
-  background-color: lightblue;
-  text-align: center;
-  padding: 5px;
-  aspect-ratio: 1 1;
-  flex-grow: 1;
+  background-color: lightgrey;
 }

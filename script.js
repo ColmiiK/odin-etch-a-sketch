@@ -1,6 +1,6 @@
 function draw(e) {
   if (e.type == "mouseover") {
-    e.currentTarget.style.background = "red";
+    e.currentTarget.style.background = "black";
   }
 }
 
@@ -13,16 +13,15 @@ function resetGrid() {
 
 function drawGrid(gridSize) {
   const container = document.querySelector("#container");
-
-  for (let i = 0; i < gridSize; i++) {
-    let rowDiv = document.createElement("div");
-    for (let j = 0; j < gridSize; j++) {
-      let columnDiv = document.createElement("div");
-      columnDiv.setAttribute("id", "grid");
-      columnDiv.addEventListener("mouseover", draw);
-      rowDiv.appendChild(columnDiv);
-    }
-    container.appendChild(rowDiv);
+  const total = Math.pow(gridSize, 2);
+  const squareSize = 100 / gridSize;
+  for (let i = 0; i < total; i++) {
+    const square = document.createElement("div");
+    square.style.width = squareSize + "%";
+    square.style.height = squareSize + "%";
+    square.setAttribute("id", "grid");
+    square.addEventListener("mouseover", draw);
+    container.appendChild(square);
   }
 }
 
