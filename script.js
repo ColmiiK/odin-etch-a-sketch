@@ -1,6 +1,9 @@
 function draw(e) {
   if (e.type == "mouseover") {
-    e.currentTarget.style.background = "black";
+    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    e.currentTarget.style.background = "#" + randomColor;
+    var opacity = getComputedStyle(e.currentTarget).opacity;
+    e.currentTarget.style.opacity = parseFloat(opacity) + 0.1 + "";
   }
 }
 
@@ -26,6 +29,9 @@ function drawGrid(gridSize) {
 }
 
 const btn = document.querySelector("#reset");
+var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+btn.style.background = "#" + randomColor;
+btn.style.color = "white";
 let gridSize = 16;
 btn.addEventListener("click", () => {
   let gridSize = prompt("How many squares should the grid have?");

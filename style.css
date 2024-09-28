@@ -29,5 +29,6 @@ body {
 }
 
 #grid {
-  background-color: lightgrey;
+  opacity: 0;
+  background: lightgrey;
 }
